@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>LU Signal Control</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<header>
+  <div class="roundel"><span>UNDERGROUND</span></div>
+  <div>
+    <h1>LU SIGNAL CONTROL</h1>
+    <small>OPEN SOURCE SIGNAL SIMULATOR</small>
+  </div>
+  <span id="clock">00:00:00</span>
+</header>
+
+<main>
+  <section class="toolbar">
+    <label>CONTROL AREA
+      <select id="line">
+        <option value="district">District Line</option>
+        <option value="central">Central Line</option>
+        <option value="victoria">Victoria Line</option>
+        <option value="bakerloo">Bakerloo Line</option>
+        <option value="jubilee">Jubilee Line</option>
+      </select>
+    </label>
+    <button id="spawn">+ Introduce train</button>
+    <button id="pause">Pause</button>
+  </section>
+
+  <section class="metrics">
+    <div>TRAINS<strong id="trains">0</strong></div>
+    <div>ROUTES<strong id="routes">0</strong></div>
+    <div>OCCUPIED<strong id="occupied">0</strong></div>
+    <div>SERVICE<strong id="service">NORMAL</strong></div>
+  </section>
+
+  <section class="panel">
+    <h2>Signalling diagram</h2>
+    <p>Select a signal or section to inspect it.</p>
+    <div id="diagram"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Signal inspector</h2>
+    <div id="inspector">No signal selected.</div>
+  </section>
+
+  <section class="panel">
+    <h2>Training scenarios</h2>
+    <button data-scenario="normal">Normal service</button>
+    <button data-scenario="peak">Peak service</button>
+    <button data-scenario="blocked">Blocked section</button>
+    <button data-scenario="failure">Train failure</button>
+    <p id="scenario">Normal service active.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Train register</h2>
+    <div id="register">No active trains.</div>
+  </section>
+
+  <section class="panel">
+    <h2>Operator event log</h2>
+    <ol id="log"></ol>
+  </section>
+</main>
+
+<script src="src/app.js"></script>
+</body>
+</html>
